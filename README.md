@@ -88,6 +88,8 @@ Null hypothesis: The distribution of minutes when rating is missing is the same 
 Alternate Hypothesis: The distribution of minutes when rating is missing is not the same as the distribution of minutes when rating is not missing
 Observed Statistic: Absolute Difference of Means
 
+<iframe src="assets/minute_rating_plot.html" width=800 height=600 frameBorder=0></iframe>
+
 <iframe src="assets/minutes_rating.html" width=800 height=600 frameBorder=0></iframe>
 
 As we can see from the permutation testing done on minutes vs ratings, we calculate a p-value of 0.1. With a significance level of 0.05, we fail to reject the null which means that ratings is possibly NMAR in this case.
@@ -98,6 +100,8 @@ After finding one scenario where the missingness of rating is not MAR, I looked 
 Null hypothesis: The distribution of total fat (PDV) when rating is missing is the same as the distribution of total fat (PDV) when rating is not missing
 Alternate Hypothesis: The distribution of total fat (PDV) when rating is missing is not the same as the distribution of total fat (PDV) when rating is not missing
 Observed Statistic: Absolute Difference of Means
+
+<iframe src="assets/fat_rating_plot.html" width=800 height=600 frameBorder=0></iframe>
 
 <iframe src="assets/totalfat_rating.html" width=800 height=600 frameBorder=0></iframe>
 
