@@ -1,1 +1,1 @@
-# Exploration-into-Recipes-and-Ratings-Dataset
+# Exploration into Recipes and Ratings Dataset
