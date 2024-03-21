@@ -38,4 +38,10 @@ The head of part of the cleaned and merged data frame is shown below:
 |        194.8 |            20.0 |         6.0 |         32.0 |            22.0 |                  36.0 |                   3.0 |
 
 
+### Univariate Analysis
+
+The next thing I did was to look at the distribution of the n_steps column. 
+
+<iframe src="assets/n_steps_dist.html" width=800 height=600 frameBorder=0></iframe>
+
 
