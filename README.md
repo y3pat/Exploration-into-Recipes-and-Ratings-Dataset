@@ -51,6 +51,14 @@ As seen in the plot, the distribution of the number of steps follows a normal di
 
 ### Bivariate Analysis
 
-Once I had looked at individual distributions, I moved on to examining some bi-variate relationships. In the plot below, I investigate the relationship between 
+Once I had looked at individual distributions, I moved on to examining some bi-variate relationships. In the 2d Histogram below, I investigate the relationship between mean ratings and the number of steps.
+
+<iframe src="assets/n_steps_mean_rating_fig.html" width=800 height=600 frameBorder=0></iframe>
+
+Before trying a 2d histogram, I had tried using a scatter plot to show this relationship. However, the scatter showed no pattern at all. When I investigated deeper and used a 2d histogram I found trends that could be found in each rating. If you look at the trends based on how many total recipes are in that bin of n_steps, we notice that there is generally a higher proportion of recipes that have a higher number of steps that have a higher rating (in the 4.9 to 5.099 range). Recipes with less than 40 steps do not appear in the 4.9 to 5.099 range but those with more than 60 steps have the largest majority of their ratings within this high range.
+
+### Interesting Aggregates
+
+
 
 
