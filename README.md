@@ -82,3 +82,23 @@ Assessing the missingness of data is important as it allows us some insight into
 
 Now that we have gone over a possible NMAR column, we can start looking into showing if a column is MAR or NMAR based on statistics. For the purpose of this section I will be investigating the randomness of the missingness of ratings.
 
+My first set of hypotheses related the minutes it takes to prepare the recipe and the missingness of the rating. I thought that the rating might be missing if the recipe takes too long to prepare as not many people would want to prepare that recipe. In order to test this I came up with the following permutation test which shuffles the data 1000 times:
+
+Null hypothesis: The distribution of minutes when rating is missing is the same as the distribution of minutes when rating is not missing
+Alternate Hypothesis: The distribution of minutes when rating is missing is not the same as the distribution of minutes when rating is not missing
+Observed Statistic: Absolute Difference of Means
+
+<iframe src="assets/minutes_rating.html" width=800 height=600 frameBorder=0></iframe>
+
+As we can see from the permutation testing done on minutes vs ratings, we calculate a p-value of 0.1. With a significance level of 0.05, we fail to reject the null which means that ratings is possibly NMAR in this case.
+
+
+After finding one scenario where the missingness of rating is not MAR, I looked into if the missingness of rating does depend on any other column. When doing this I came up with the following permutation test which shuffles the data 1000 times:
+
+Null hypothesis: The distribution of total fat (PDV) when rating is missing is the same as the distribution of total fat (PDV) when rating is not missing
+Alternate Hypothesis: The distribution of total fat (PDV) when rating is missing is not the same as the distribution of total fat (PDV) when rating is not missing
+Observed Statistic: Absolute Difference of Means
+
+<iframe src="assets/totalfat_rating.html" width=800 height=600 frameBorder=0></iframe>
+
+As we can see from the permutation testing done on total fat (PDV) vs ratings, we calculate a p-value of 0.0. With a significance level of 0.05, we reject the null which means that the ratings column is most likely MAR and dependent on the total fat (PDV) column.
