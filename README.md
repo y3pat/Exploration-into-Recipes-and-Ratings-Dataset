@@ -123,4 +123,7 @@ First, I created a new column in a df that contained the ratings and total fat (
 
 After performing a permutation test using this as the statistic, I found a p-value of 0.095. This means that we fail to reject the null with a significance of 0.05. This also means that the test is statistically insignificant.
 
+## Framing a Prediction Problem
+
+Another amazing part of datascience is that we can use feature engineering to transform columns in order to create accurate predictions on other columns. I chose to perform feature engineering to predict the rating column of the dataset. The reason I chose rating is because I feel like rating would have the closest connection with other features in the column. For example, if the people reviewing would enjoy healthy foods, then they would give foods with low fat and high protein higher ratings. By transforming values in other columns through the sklearn modules we can attempt to accurately predict the rating column. The metric I will be using to evaluate the model is root mean-squared-error. This metric would be better compared to accuracy and other metrics since 
 
