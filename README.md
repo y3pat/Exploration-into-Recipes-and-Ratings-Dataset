@@ -129,5 +129,11 @@ Another amazing part of datascience is that we can use feature engineering to tr
 
 ## Baseline Model
 
-My model uses a pipeline that changes the 'submitted' and '
+My regression model uses a column transformer and a pipeline to change the 'submitted' and 'protein (PDV)' columns. The model first alters the submitted column so that it changes from an ordinal variable to a quantitative variable that it can work with by converting the values in the column to its year. It then converts the protein (PDV) column, which is a continuous variable, by using a quantiletransformer that replaces the protein value with whatever quantile it lies within, which is discrete since it can only take on a value between 0 and 100. Finally, it uses linear regression to predict the values in the rating column. 
+
+The model ended up with an rmse of 0.7102. The model is okay at predicting the rating but it could still get much better. This rmse can be considered mediocre and means that the model gets relatively close to the actual value when predicting but is not able to accurately predict it.
+
+## Final Model
+
+
 
