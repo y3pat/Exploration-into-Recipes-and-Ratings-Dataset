@@ -139,4 +139,14 @@ Some features I added in an attempt to make the model more accurate involved tra
 
 However, despite all this, the model barely improved. After using a train-test-split which trained the model on the training set and found rmse on the test set, it was found that the model had a rmse of 0.7048. This shows an improvement of just 0.0054 in the rmse. Nonetheless, this is still an improvement on the previous baseline model.
 
+## Fairness Analysis
 
+Once we have a model, it is important to evaluate the fairness of the model. We can do this by identifying two groups and identifying if the rmse of the model will have the same distribution for both groups. In this case, I identify groups based on a recipe's number of ingredients. If a recipe has greater than or equal to 11 ingredients it is considered to have many ingredients and is a part of Group X. If a recipe has less than 11 ingredients it is considered to have few ingredients and is a part of Group Y. The number 11 was chosen since it is the 75% quartile for n_ingredients.
+
+The evaluation metric in this case is RMSE parity to evaluate the fairness of the regression model. The null hypothesis is that my model is fair. Its rmse when performing regression on recipes with many ingredients is the same as when performing on recipes with few ingredients. On the other hand, the alternative hypothesis is that my model is not fair. Its rmse when performing regression on recipes with many ingredients is greater than the rmse when performing on recipes with few ingredients. The test statistic being used is difference of rmses with a significance level of 0.05.
+
+When performing the permutation test to see if the model is fair, I shuffled the n_ingredients column and then predicted the values for the rating for X if it had few ingredients and for X if it had many ingredients in the shuffled col. I then proceeded to store the differences in rmses for the predictions into a list by doing (many_ingredient_rmse - few_ingredient_rmse). This means that if the difference is high, recipes with many ingredients will have a higher rmse when predicting the rating using our final model.
+
+Finally, I found the p-value by seeing how many values in the list were above the observed difference in rmse and divided by 1000, since that was how many repetitions were done in the permutation test. This test found a p-value of 0.983 which is very obviously above the significance of 0.05. This means that we fail to reject the null.
+
+My conclusion is that since the p-value is high, more parity tests must be performed since the extremity of this p-value is great cause for concern. 
