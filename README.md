@@ -135,5 +135,8 @@ The model ended up with an rmse of 0.7102. The model is okay at predicting the r
 
 ## Final Model
 
+Some features I added in an attempt to make the model more accurate involved transforming the 'tags' and 'minutes' columns. When encoding the tags column I decided to use a OneHotEncoder on the first tag in the list, since I noticed that the first tag was an ordinal variable on the range of minutes the recipe took. I utilized this column since there is a possibility that being within a certain range of this tag would lead to certain trends in ratings. There was also the realization that since total fat (PDV) and protein (PDV) generally increase with the number of steps which usually increases with larger number of minutes. This realization led to me onehotencoding the first tag and using a Binarizer on minutes due to the relationship between the variables already being used in the model and those outside of the model. I then tested for hyperparameters through k-fold cross-validation to see which n_quantiles to use for QuantileTransformer and which threshold to use for the Binarizer, such that the rmse would be optimized. In doing so, I found that a n_quantiles of 30 and threshold of 550 led to optimized rmse for the model.
+
+However, despite all this, the model barely improved. After using a train-test-split which trained the model on the training set and found rmse on the test set, it was found that the model had a rmse of 0.7048. This shows an improvement of just 0.0054 in the rmse. Nonetheless, this is still an improvement on the previous baseline model.
 
 
