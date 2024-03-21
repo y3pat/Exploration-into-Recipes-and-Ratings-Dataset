@@ -110,3 +110,17 @@ The result of the permutation test is shown below:
 <iframe src="assets/totalfat_rating.html" width=800 height=600 frameBorder=0></iframe>
 
 As we can see from the permutation testing done on total fat (PDV) vs ratings, we calculate a p-value of 0.0. With a significance level of 0.05, we reject the null which means that the ratings column is most likely MAR and dependent on the total fat (PDV) column.
+
+## Hypothesis Testing
+
+After seeing all of these distributions and tables, I wanted to finally answer the question on if people give lower ratings on average to recipes with higher total fat contents. Before performing the permutation test to see if we can reject the null, I came up with the null hypothesis, alternate hypothesis, and observation statistic.
+
+Null Hypothesis: People give recipes with a total fat greater than 100% of your daily value the same average ratings as those with total fat content less than or equal to 100%
+Alternate Hypothesis: People give recipes with a total fat greater than 100% of your daily value lower average ratings than those with total fat content less than or equal to 100%
+Observation Statistic: Difference of Means
+
+First, I created a new column in a df that contained the ratings and total fat (PDV) columns that identified if a food was high in fat. This was done by putting True if the food had >100.0 PDV and False otherwise. This allowed me to then group the df so that the indices were True or False, and found the mean ratings for each. I then did (mean rating of False) - (mean rating of True) which calculates how much higher the rating of foods with low fat is than the rating of foods with high fat. 
+
+After performing a permutation test using this as the statistic, I found a p-value of 0.095. This means that we fail to reject the null with a significance of 0.05. This also means that the test is statistically insignificant.
+
+
