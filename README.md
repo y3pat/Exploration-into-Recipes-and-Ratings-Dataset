@@ -125,5 +125,9 @@ After performing a permutation test using this as the statistic, I found a p-val
 
 ## Framing a Prediction Problem
 
-Another amazing part of datascience is that we can use feature engineering to transform columns in order to create accurate predictions on other columns. I chose to perform feature engineering to predict the rating column of the dataset. The reason I chose rating is because I feel like rating would have the closest connection with other features in the column. For example, if the people reviewing would enjoy healthy foods, then they would give foods with low fat and high protein higher ratings. By transforming values in other columns through the sklearn modules we can attempt to accurately predict the rating column. The metric I will be using to evaluate the model is root mean-squared-error. This metric would be better compared to accuracy and other metrics since 
+Another amazing part of datascience is that we can use feature engineering to transform columns in order to create accurate predictions on other columns. I chose to perform feature engineering to predict the rating column of the dataset. The reason I chose rating is because I feel like rating would have the closest connection with other features in the column. For example, if the people reviewing would enjoy healthy foods, then they would give foods with low fat and high protein higher ratings. By transforming values in other columns through the sklearn modules we can attempt to accurately predict the rating column. The metric I will be using to evaluate the model is root mean-squared-error. This metric would be better compared to accuracy and other metrics since it will allow for us to see if the rating predictions are very off. Since the ratings only go from 0.0 to 5.00, the rmse will allow us to know if our model tends to overestimate or underestimate. If we were to use something such as accuracy we would only know if our model generally predicted correctly, but not how distant the predictions are from the actual values.
+
+## Baseline Model
+
+My model uses a pipeline that changes the 'submitted' and '
 
