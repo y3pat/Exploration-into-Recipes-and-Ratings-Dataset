@@ -21,6 +21,7 @@ After cleaning these columns, I also saw that the 'user_id' column had to be cha
 Finally, I grouped the values by their recipe id and found the mean rating for each unique recipe. This was then merged into the dataset so that each unique recipeid would have its appropriate mean rating.
 
 The head of part of the cleaned and merged data frame is shown below:
+
 |     id | name                                 |   minutes | submitted           |   n_steps |   n_ingredients |    mean_rating |
 |-------:|:-------------------------------------|----------:|:--------------------|----------:|----------------:|---------------:|
 | 333281 | 1 brownies in the world    best ever |        40 | 2008-10-27 00:00:00 |        10 |               9 |            4.0 |
@@ -28,6 +29,8 @@ The head of part of the cleaned and merged data frame is shown below:
 | 306168 | 412 broccoli casserole               |        40 | 2008-05-30 00:00:00 |         6 |               9 |            5.0 |
 | 286009 | millionaire pound cake               |       120 | 2008-02-12 00:00:00 |         7 |               7 |            5.0 |
 | 475785 | 2000 meatloaf                        |        90 | 2012-03-06 00:00:00 |        17 |              13 |            5.0 |
+
+...continued...
 
 | calories (#) | total fat (PDV) | sugar (PDV) | sodium (PDV) |   protein (PDV) |   saturated fat (PDV) |   carbohydrates (PDV) |
 |-------------:|:----------------|------------:|:-------------|----------------:|----------------------:|----------------------:|
@@ -43,5 +46,11 @@ The head of part of the cleaned and merged data frame is shown below:
 The next thing I did was to look at the distribution of the n_steps column. 
 
 <iframe src="assets/n_steps_dist.html" width=800 height=600 frameBorder=0></iframe>
+
+As seen in the plot, the distribution of the number of steps follows a normal distribution. The number of steps for a recipe is generally around seven steps as seen in the plot.
+
+### Bivariate Analysis
+
+Once I had looked at individual distributions, I moved on to examining some bi-variate relationships. In the plot below, I investigate the relationship between 
 
 
