@@ -59,6 +59,26 @@ Before trying a 2d histogram, I had tried using a scatter plot to show this rela
 
 ### Interesting Aggregates
 
+In this aggregate analysis I look into the mean and median of protein (PDV) and total fat (PDV) based on the number of steps the recipe takes to prepare. The first few rows are shown below:
+
+|   ('n_steps', '') |   ('mean', 'protein (PDV)') |         ('mean', 'total fat (PDV)') |   ('median', 'protein (PDV)') |  ('median', 'total fat (PDV)') |
+|------------------:|----------------------------:|------------------------------------:|------------------------------:|-------------------------------:|
+|                 1 |                    11.75    |                               19.71 |                           4.0 |                            6.0 |
+|                 2 |                       15.45 |                               20.52 |                           6.0 |                            7.0 |
+|                 3 |                       17.13 |                               20.44 |                           7.0 |                           10.0 |
+|                 4 |                      22.98  |                               24.57 |                          11.0 |                           14.0 |
+|                 5 |                      27.43  |                               26.15 |                          13.0 |                           17.0 |
 
 
+This pivot table shows that both mean protein and mean total fat, along with median protein and median total fat, increase as the number of steps initially increases. If we look at the whole dataframe however, the trend does not stay this way.
+
+## Assessment of Missingness
+
+### NMAR Analysis
+
+Assessing the missingness of data is important as it allows us some insight into why a column might have null values. When data is NMAR (not missing at random) the fact that the data is missing is completely dependent on the column itself. For example, the description column in our dataframe is most likely NMAR. This is because there is a possibility that the contributor of the recipe did not feel that it was necessary to give the recipe a description and instead left it blank. 
+
+### Missingness Dependency
+
+Now that we have gone over a possible NMAR column, we can start looking into showing if a column is MAR or NMAR based on statistics. For the purpose of this section I will be investigating the randomness of the missingness of ratings.
 
